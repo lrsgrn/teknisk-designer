@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lars Haugen Grenaker · Teknisk designer</title>
+<meta name="description" content="Ansøgning til Vejdirektoratet: teknisk designer til avanceret projektering og 3D-modellering. Med en prototype udviklet med AI.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Lars Haugen Grenaker, teknisk designer">
+<meta property="og:description" content="Ansøgning til Vejdirektoratet med en prototype, der kontrollerer en vejtegning og screener den for modulvogntog.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2314181d'/%3E%3Cpath d='M2 12C6 11 9 8 14 4' stroke='%23fff' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#forside">Lars Haugen Grenaker</a>
+  <nav aria-label="Sektioner">
+    <a href="#hvorfor">Hvorfor mig</a>
+    <a href="#demo">Demo</a>
+    <a href="#projekter">Projekter</a>
+    <a href="#ai">Bygget med AI</a>
+    <a href="#cv">CV</a>
+    <a class="keep" href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<!-- 1. FORSIDE -->
+<section id="forside" class="hero" aria-label="Forside">
+  <div class="hero-sticky">
+    <div class="sheet-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <svg id="hero-fallback" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="none" stroke="#0d3b66" stroke-width="1.2">
+        <path d="M-20 420 C 200 380, 300 300, 400 250 S 620 120, 830 90" stroke-width="26" stroke="#d5d2ca"/>
+        <path d="M-20 420 C 200 380, 300 300, 400 250 S 620 120, 830 90" stroke-dasharray="14 10"/>
+      </g>
+    </svg>
+    <div class="hero-text">
+      <h1>Fra tegning til model, med AI som værktøj.</h1>
+      <p class="hero-lines">
+        <span>Jeg er teknisk designer og cand.tech. i urban design.</span>
+        <span>Jeg har bygget en prototype, der kontrollerer en vejtegning og screener den for modulvogntog.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#demo">Prøv demoen (30 sek)</a>
+        <a class="btn btn-ghost" href="assets/CV_LarsHaugenGrenaker.pdf" download>Hent CV</a>
+      </div>
+    </div>
+    <table class="titleblock" aria-label="Tegningshoved">
+      <tr><th>Emne</th><td colspan="3">Teknisk designer til avanceret projektering og 3D-modellering</td></tr>
+      <tr><th>Tegnet af</th><td colspan="3">Lars Haugen Grenaker</td></tr>
+      <tr><th>Rev.</th><td>A</td><th>Mål</th><td>1:1</td></tr>
+      <tr><th>Tegn.nr.</th><td>LHG-2026-001</td><th>Dato</th><td>15.11.2026</td></tr>
+    </table>
+  </div>
+</section>
+
+<main>
+
+<!-- 2. HVORFOR MIG -->
+<section id="hvorfor" class="sec">
+  <h2>Hvorfor mig</h2>
+  <p class="lead why-lead">Jeg har arbejdet som byplanlægger, monteret vindmøller og uddannet mig til teknisk designer. I denne stilling kan jeg bruge det hele.</p>
+  <div class="why">
+    <article>
+      <h3>Teknisk designer</h3>
+      <p>Uddannet på Noroff i 2025. Tegner i AutoCAD og modellerer i Revit og Inventor. Eksamensprojekt og praktik hos MARK Arkitekter.</p>
+    </article>
+    <article>
+      <h3>Ny teknologi og AI</h3>
+      <p>Prototypen på denne side har jeg udviklet med AI. Den kontrollerer en tegning og screener den, direkte i browseren. <a href="#demo">Prøv den</a></p>
+    </article>
+    <article>
+      <h3>Urban design</h3>
+      <p>Bachelor fra Stavanger med vejplanlægning og landmåling, kandidat fra Aalborg. Jeg planlægger med blik for dem, der går og cykler. De bliver stadig ofte overset.</p>
+    </article>
+    <article>
+      <h3>Vindmøller</h3>
+      <p>Faglært i produktion og montage fra Skjern Tekniske Skole. Montør og tekniker siden 2021, i dag Surveillance Specialist hos Momentum Energy Services.</p>
+    </article>
+  </div>
+  <div class="tools">
+    <h3>Værktøjer</h3>
+    <dl>
+      <dt>Bruger i dag</dt><dd>Revit, AutoCAD, Inventor, Solibri, Twinmotion</dd>
+      <dt>Næste jeg lærer</dt><dd>MicroStation, ProjectWise, iModel, AutoTURN</dd>
+    </dl>
+    <p>Revit, Solibri og Twinmotion lærte jeg på ét år på Noroff.</p>
+  </div>
+</section>
+
+<!-- 3. DEMO -->
+<section id="demo" class="sec sec-wide">
+  <h2>Demo: fra tegning til screening</h2>
+  <p class="lead">En vejtegning går ind. Et udkast til screeningsnotat kommer ud.</p>
+
+  <ol class="strip">
+    <li><a href="#trin1"><canvas id="th-1" width="320" height="220"></canvas><strong>1. Tegning</strong><span>En DXF af et kryds</span></a></li>
+    <li><a href="#trin1"><canvas id="th-2" width="320" height="220"></canvas><strong>2. Kontrol</strong><span>Lag, attributter, dubletter</span></a></li>
+    <li><a href="#trin2"><canvas id="th-3" width="320" height="220"></canvas><strong>3. Screening</strong><span>Køretøjet køres igennem</span></a></li>
+    <li><a href="#resultat">
+      <svg viewBox="0 0 320 220" role="img" aria-label="Notat"><rect width="320" height="220" fill="#f4f5f6"/><rect x="100" y="22" width="120" height="176" fill="#fff" stroke="#16202b" stroke-width="1.5"/><rect x="112" y="36" width="52" height="7" fill="#b3261e"/><g stroke="#16202b" stroke-width="2"><path d="M112 58h96M112 72h96M112 86h70"/></g><rect x="112" y="100" width="96" height="46" fill="#d5d2ca"/><path d="M118 140c20-2 34-10 44-34" fill="none" stroke="#2f6aa3" stroke-width="7" stroke-linecap="round" opacity=".7"/><g stroke="#9aa0a6" stroke-width="2"><path d="M112 160h96M112 172h96M112 184h60"/></g></svg>
+      <strong>4. Notat</strong><span>Udkast til ingeniøren</span></a></li>
+  </ol>
+
+  <p class="warn"><strong>Prototype til tidlig screening. Erstatter ikke AutoTURN eller faglig vurdering.</strong> Udviklet af mig med AI. Ikke et færdigt produkt og ikke godkendt af Vejdirektoratet. Eksemplet er et opdigtet kryds.</p>
+
+  <div class="step" id="trin1">
+    <h3>Trin 1 og 2: Tegning og kontrol</h3>
+    <p>Eksempeltegningen indeholder med vilje otte afvigelser. Kontrollen finder dem ud fra otte regler, som er inspireret af Vejdirektoratets Modelstandard og Tegningsstandard.</p>
+    <div class="plan-wrap">
+      <canvas id="plan1" class="plan-big" aria-label="Eksempeltegning af kryds med nummererede afvigelser"></canvas>
+    </div>
+    <p class="file-line">
+      <span class="mono" id="demo-file"></span>
+      <span class="file-actions">
+        <label class="link" for="dxf-file">Upload egen DXF</label><input id="dxf-file" type="file" accept=".dxf" hidden>
+        <button class="link" id="btn-example-dl" type="button">Hent eksemplet</button>
+        <button class="link" id="btn-example" type="button">Nulstil</button>
+      </span>
+    </p>
+    <div id="t1-summary" class="summary"></div>
+    <div id="t1-table" class="table-wrap"></div>
+    <details>
+      <summary>Lag og deres rolle i screeningen</summary>
+      <p class="muted small">Laglisten er demoens egen. Ukendte lag er markeret, rollen gættes ud fra navnet og kan ændres. En uploadet fil bliver i din browser.</p>
+      <div id="t1-layers" class="layers"></div>
+    </details>
+  </div>
+
+  <div class="step" id="trin2">
+    <h3>Trin 3: Screening</h3>
+    <p>Vælg køretøj og tryk Kør. Køremåde A, 15 km/t, 0,3 m arealtillæg på hjul og karosseri. Arealbehovet må ikke gå ind over kantsten, fortov, cykelsti eller modkørendes kørebane.</p>
+    <div class="seg" id="veh" role="group" aria-label="Køretøj"></div>
+    <p class="muted small" id="veh-note"></p>
+    <div class="plan-grid">
+      <div class="plan-wrap">
+        <canvas id="plan" aria-label="Plan over krydset med arealbehov og konflikter"></canvas>
+        <div class="legend">
+          <span><i style="background:#2f6aa3"></i>Arealbehov inkl. 0,3 m</span>
+          <span><i style="background:#c8281e"></i>Hjul uden for tilladt areal</span>
+          <span><i style="background:#d6781e"></i>Modkørende</span>
+          <span><i style="background:#c9ab7c"></i>Overkørselsareal</span>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="ctrl-row">
+          <button class="btn" id="btn-play" type="button">Kør</button>
+          <input id="sl-pos" type="range" min="0" max="100" value="0" aria-label="Position på køresporet">
+        </div>
+        <label class="ctrl">Kurveradius, foraksel <output id="out-radius"></output>
+          <input id="sl-radius" type="range" min="8" max="25" step="0.5" value="14">
+        </label>
+        <div id="example-controls">
+          <label class="ctrl">Indkørsel fra midterlinje <output id="out-entry"></output>
+            <input id="sl-entry" type="range" min="-1.5" max="2.5" step="0.05" value="2">
+          </label>
+          <label class="ctrl">Udkørsel fra midterlinje <output id="out-exit"></output>
+            <input id="sl-exit" type="range" min="-2.5" max="1.5" step="0.05" value="-2.25">
+          </label>
+        </div>
+        <button class="btn btn-ghost" id="btn-draw" type="button" hidden>Tegn kørespor</button>
+        <p id="t2-msg" class="msg" role="status"></p>
+      </div>
+    </div>
+    <div id="t2-summary" class="summary"></div>
+    <div id="t2-table" class="table-wrap"></div>
+  </div>
+
+  <div class="step" id="resultat">
+    <h3>Trin 4: Resultat</h3>
+    <p class="lead" id="res-sum"></p>
+    <div class="demo-actions">
+      <button class="btn" id="btn-propose" type="button">Foreslå tilpasning</button>
+      <button class="btn btn-ghost" id="btn-pdf" type="button">Gem notat som PDF</button>
+      <button class="btn btn-ghost" id="btn-html" type="button">Hent notat som HTML</button>
+    </div>
+    <div id="proposal" class="proposal" hidden></div>
+    <details class="notat-wrap">
+      <summary>Vis udkast til screeningsnotat</summary>
+      <article id="notat" class="notat"></article>
+    </details>
+  </div>
+</section>
+
+<!-- 4. PROJEKTER -->
+<section id="projekter" class="sec">
+  <h2>Projekter</h2>
+  <div class="projects">
+
+    <article class="project wide">
+      <img src="assets/img/noroff-eksterior.jpg" alt="Visualisering af bolig på skrånende grund" loading="lazy" width="1400" height="788">
+      <div>
+        <h3>Bolig med MARK Arkitekter</h3>
+        <p class="meta">Eksamensprojekt, Noroff, 2025</p>
+        <p><strong>Opgave:</strong> En bolig i Son i Norge, tegnet efter bygherrens ønsker og de lokale planbestemmelser.</p>
+        <p><strong>Min rolle:</strong> 3D-model i Revit, tekniske tegninger, mængdeudtræk og visualiseringer i Twinmotion. Karakter A.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img class="fit" src="assets/img/bim-solibri.jpg" alt="Kollisionskontrol i Solibri med markerede konflikter" loading="lazy" width="1200" height="735">
+      <div>
+        <h3>Kvalitetssikring i Solibri</h3>
+        <p class="meta">Fag, Noroff, 2024</p>
+        <p><strong>Opgave:</strong> Kontrollere bygningsmodeller, før de deles.</p>
+        <p><strong>Min rolle:</strong> Kollisionskontrol, regeltjek og kontrol af modellernes information.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="assets/img/tsp-1.jpg" alt="Dronefoto af et vejkryds i Eidskog Kommune" loading="lazy" width="1200" height="800">
+      <div>
+        <h3>Trafiksikkerhedsplan</h3>
+        <p class="meta">Eidskog Kommune, 2018</p>
+        <p><strong>Opgave:</strong> Kommunens plan for 2017–2021 med vægt på sikre skoleveje.</p>
+        <p><strong>Min rolle:</strong> Udarbejdede planen som by- og regionalplanlægger: status, mål og tiltag.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img class="fit" src="assets/img/mobilitet-snit.jpg" alt="Tværsnit af gade med letbane, perroner og cykelstier" loading="lazy" width="1100" height="778">
+      <div>
+        <h3>Letbane i Aalborg</h3>
+        <p class="meta">Kandidatprojekt, Aalborg Universitet, 2014</p>
+        <p><strong>Opgave:</strong> Strategi og designforslag for en letbane med et centralt knudepunkt.</p>
+        <p><strong>Min rolle:</strong> Kandidatprojekt om, hvordan letbanen indpasses i gaderummet.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="assets/img/kalvebod-plan.jpg" alt="Illustrationsplan for Kalvebodkvarteret Vest i Ørestad" loading="lazy" width="1400" height="1980">
+      <div>
+        <h3>Masterplan for Kalvebodkvarteret Vest</h3>
+        <p class="meta">Bascon/COWI, 2014, 1. plads</p>
+        <p><strong>Opgave:</strong> Konkurrenceforslag til en ny bydel i Ørestad for By &amp; Havn.</p>
+        <p><strong>Min rolle:</strong> Praktikant på holdet bag forslaget. Jeg arbejdede især med karréløsninger og aktivitetsområdet Plug N Play.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img class="fit" src="assets/img/speciale-gangrute.jpg" alt="Diagram over en gangrute gennem Aalborg forbi parker, gårdrum og et vejkryds" loading="lazy" width="1400" height="495">
+      <div>
+        <h3>Tæt by set til fods</h3>
+        <p class="meta">Speciale, Aalborg Universitet, 2015</p>
+        <p><strong>Opgave:</strong> Hvordan kan en by fortættes uden at miste livskvalitet?</p>
+        <p><strong>Min rolle:</strong> Jeg undersøgte, hvordan mennesker påvirkes af deres omgivelser, når de går gennem byen, fra park til trafikeret kryds. På den baggrund tegnede jeg et forslag til et tæt boligområde, hvor gående, cyklister og kollektiv trafik går forud for biler.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img class="fit" src="assets/img/lampe-app.jpg" alt="Skærmbillede af lampeprogrammet med 3D-model og profil-editor" loading="lazy" width="1440" height="900">
+      <div>
+        <h3>Lampedesigner</h3>
+        <p class="meta">Eget projekt, 2026, parametrisk arbejde</p>
+        <p><strong>Opgave:</strong> Et program, hvor en lampe formes parametrisk og bliver til skærefiler til laser.</p>
+        <p><strong>Min rolle:</strong> Udviklede programmet. Det laver SVG og DXF i 1:1, fordeler delene på plader og tester dem for kollisioner i 3D.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- 5. BYGGET MED AI -->
+<section id="ai" class="sec">
+  <h2>Bygget med AI</h2>
+  <div class="two-col">
+    <div>
+      <p class="lead">Hele siden og demoen er lavet med Claude. Jeg har styret arbejdet, testet resultaterne og kontrolleret dem.</p>
+      <p>Reglerne har jeg valgt, og forenklingerne står i notatet. Køretøjernes mål er antagelser, og laglisten er min egen. Alt kører i browseren uden server.</p>
+      <p class="muted">Ved siden af mit arbejde driver jeg Realty Video, hvor jeg bruger AI til blandt andet kodning og videoproduktion.</p>
+    </div>
+    <div>
+      <h3>Det ville jeg prøve hos jer</h3>
+      <table class="map">
+        <thead><tr><th>Opgave i stillingsopslaget</th><th>Idé</th></tr></thead>
+        <tbody>
+          <tr><td>Overgangen fra PDF-tegninger til 3D-modeller</td><td>Et lille værktøj, der tjekker navngivning og data mod standarden, før en model deles.</td></tr>
+          <tr><td>Kvalitetssikring af projektdata</td><td>Automatisk forkontrol af lag, attributter og tegningshoveder før udbud.</td></tr>
+          <tr><td>Screening for modulvogntog</td><td>Et hurtigt første svar på, om et kryds er værd at regne videre på i AutoTURN.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted small">AI erstatter ikke fagligheden. Resultatet skal altid efterprøves af en, der kender faget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CV OG KONTAKT -->
+<section id="cv" class="sec">
+  <h2>CV</h2>
+  <div class="cv-top">
+    <img class="portrait" src="assets/img/profil.jpg" alt="Portræt af Lars Haugen Grenaker" width="160" height="160" loading="lazy">
+    <div>
+      <p class="lead">Faglært teknisk designer og cand.tech. i urban design. Bor i Horsens.</p>
+      <a class="btn" href="assets/CV_LarsHaugenGrenaker.pdf" download>Hent CV som PDF</a>
+    </div>
+  </div>
+
+  <div class="cv-grid">
+    <div>
+      <h3>Uddannelse</h3>
+      <ul class="timeline">
+        <li><time>03.2024 – 03.2025</time><div><strong>Teknisk designer (Technical Design: Architectural)</strong><span>Noroff School of Technology and Digital Media</span></div></li>
+        <li><time>08.2020 – 06.2022</time><div><strong>Produktions- og montageuddannelsen</strong><span>Skjern Tekniske Skole</span></div></li>
+        <li><time>08.2013 – 06.2015</time><div><strong>Kandidat i urban design (cand.tech.)</strong><span>Aalborg Universitet</span></div></li>
+        <li><time>08.2008 – 01.2012</time><div><strong>Bachelor i byudvikling og urban design</strong><span>Universitetet i Stavanger</span></div></li>
+        <li><time>08.2006 – 06.2007</time><div><strong>Militærtjeneste</strong><span>Hærens Styrker, Norge</span></div></li>
+        <li><time>08.2003 – 06.2006</time><div><strong>Almene, økonomiske og administrative fag</strong><span>Nes videregående skole</span></div></li>
+      </ul>
+      <h3>Erhvervserfaring</h3>
+      <ul class="timeline">
+        <li><time>09.2022 –</time><div><strong>Vindmølletekniker og overvågning, nu Surveillance Specialist</strong><span>Momentum Energy Services</span></div></li>
+        <li><time>01.2025 – 03.2025</time><div><strong>Praktikant, teknisk designer</strong><span>MARK Arkitekter</span></div></li>
+        <li><time>01.2021 – 06.2022</time><div><strong>Vindmøllemontør</strong><span>Welcon</span></div></li>
+        <li><time>08.2019 – 06.2021</time><div><strong>Urban designer</strong><span>COurban Design Collective</span></div></li>
+        <li><time>03.2017 – 07.2019</time><div><strong>By- og regionalplanlægger</strong><span>Eidskog Kommune</span></div></li>
+        <li><time>09.2016 – 12.2016</time><div><strong>Plankonsulent</strong><span>Kongsvinger Kommune</span></div></li>
+        <li><time>08.2014 – 12.2014</time><div><strong>Praktikant, urban designer</strong><span>Bascon/COWI</span></div></li>
+        <li><time>08.2012 – 06.2013</time><div><strong>Work and Travel</strong><span>New Zealand</span></div></li>
+        <li><time>08.2006 – 06.2016</time><div><strong>Servicemedarbejder og chauffør</strong><span>ISS</span></div></li>
+      </ul>
+    </div>
+    <div class="cv-side">
+      <h3>Programmer</h3>
+      <p>Revit, AutoCAD, Inventor, Solibri, Twinmotion, SketchUp, PCSCHEMATIC Automation, LightBurn, Replit, Photoshop, Illustrator, InDesign, Premiere Pro, Word, Excel, PowerPoint</p>
+      <h3>Certifikater</h3>
+      <ul class="plain"><li>Kørekort B</li><li>Mobilkran 8–30 tm</li><li>Dronecertifikat 1A</li></ul>
+      <h3>Priser</h3>
+      <ul class="plain">
+        <li>1. plads, masterplan for Kalvebodkvarteret Vest, By &amp; Havn</li>
+        <li>1. plads, medaljekonkurrence, Eremitageløbet 2021</li>
+        <li>Årets klassekammerat 2022, Skjern Tekniske Skole</li>
+      </ul>
+      <h3>Sprog</h3>
+      <ul class="plain"><li>Norsk, engelsk og dansk</li></ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="kontakt" class="foot">
+  <div class="foot-in">
+    <div>
+      <h2>Kontakt</h2>
+      <p>Lars Haugen Grenaker, Horsens</p>
+      <p><a href="mailto:lars.h.grenaker@gmail.com">lars.h.grenaker@gmail.com</a></p>
+      <p><a href="https://www.linkedin.com/in/larshaugen/" rel="noopener">LinkedIn</a></p>
+    </div>
+    <p class="muted small">Siden er lavet til min ansøgning på stillingen som teknisk designer i Vejdirektoratet, november 2026. Demoen er en prototype udviklet med AI og er ikke godkendt af Vejdirektoratet.</p>
+  </div>
+</footer>
+
+<script src="js/demo/dxf.js" defer></script>
+<script src="js/demo/example.js" defer></script>
+<script src="js/demo/rules.js" defer></script>
+<script src="js/demo/mvt.js" defer></script>
+<script src="js/demo/notat.js" defer></script>
+<script src="js/demo/ui.js" defer></script>
+<script src="js/hero.bundle.js" defer></script>
+</body>
+</html>
